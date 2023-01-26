@@ -26,10 +26,11 @@ export default class RecipeShow extends React.Component {
   }
   componentDidMount() {
     const { recipe, fridge } = this.props;
-    let calories = Object.values(recipe.nutrition).filter(nutrient => ["Calories"].includes(nutrient.title))[0].amount;
-    let protein = Object.values(recipe.nutrition).filter(nutrient => ["Protein"].includes(nutrient.title))[0].amount;
-    let fat = Object.values(recipe.nutrition).filter(nutrient => ["Fat"].includes(nutrient.title))[0].amount;
-    let carbohydrates = Object.values(recipe.nutrition).filter(nutrient => ["Carbohydrates"].includes(nutrient.title))[0].amount;
+    debugger
+    let calories = Object.values(recipe.nutrition).filter(nutrient => ["Calories"].includes(nutrient.name))[0].amount;
+    let protein = Object.values(recipe.nutrition).filter(nutrient => ["Protein"].includes(nutrient.name))[0].amount;
+    let fat = Object.values(recipe.nutrition).filter(nutrient => ["Fat"].includes(nutrient.name))[0].amount;
+    let carbohydrates = Object.values(recipe.nutrition).filter(nutrient => ["Carbohydrates"].includes(nutrient.name))[0].amount;
     let calorieAc = (carbohydrates * 4) + (protein * 4)+ (fat * 9);
     let carbPer = Math.round(carbohydrates * 4 / calorieAc * 1000) / 10;
     let proteinPer = Math.round(protein * 4 / calorieAc * 1000) / 10;
