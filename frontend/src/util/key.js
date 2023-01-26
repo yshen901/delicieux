@@ -1,3 +1,3 @@
 export default {
-  apiKey: "be025cdd9bmsh49601abc3099f49p1c31fdjsn618acb311b0a",
+  apiKey: "fe798df719mshf00aae41c9b30d2p11343ajsn966e13b425e1",
 }

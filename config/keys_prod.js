@@ -1,5 +1,5 @@
 module.exports = {
-    mongoURI: process.env.MONGO_URI,
-    secretOrKey: process.env.SECRET_OR_KEY,
-    apiKey: "be025cdd9bmsh49601abc3099f49p1c31fdjsn618acb311b0a",
+    mongoURI: "mongodb+srv://delicieux-app:<P4ssw0rd>@cluster0.b9iq8ph.mongodb.net/?retryWrites=true&w=majority",
+    secretOrKey: "secret",
+    apiKey: "a054654b1bd749c0b9f743d76feec132",
 }
