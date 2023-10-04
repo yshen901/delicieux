@@ -5,53 +5,58 @@ import key from './key';
 export const getRandomRecipe = (number = 1, tags) => {
   if (!tags) tags = [];
   let tagStr = tags.join(",");
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "number": `${number}`,
-      "tags": tagStr
-    },
-  })
+  return axios.get(`https://api.spoonacular.com/recipes/random?number=${number}&tags=${tagStr}&apiKey=${key.apiKey_spoon}`);
+
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "number": `${number}`,
+  //     "tags": tagStr
+  //   },
+  // })
     // .then(res => console.log(res))
     // .fail(err => console.log(err))
   //res.data
 };
 
 export const getRandomRecipes = (number) => {
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "number": `${number}`,
-      "tags": "vegetarian%2Cdessert"
-    }
-  })
+  return axios.get(`https://api.spoonacular.com/recipes/random?number=${number}&apiKey=${key.apiKey_spoon}`);
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "number": `${number}`,
+  //     "tags": "vegetarian%2Cdessert"
+  //   }
+  // })
 };
 
 export const getRecipeById = (id, includeNutrition = true) => {
-  return axios({
-    "method": "GET",
-    "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "includeNutrition": `${includeNutrition}`
-    }
-  })
+  return axios.get(`https://api.spoonacular.com/recipes/random?id=${id}&includeNutrition=${includeNutrition}&apiKey=${key.apiKey_spoon}`);
+
+  // return axios({
+  //   "method": "GET",
+  //   "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "includeNutrition": `${includeNutrition}`
+  //   }
+  // })
     // .then(res => console.log(res))
     // .catch(err => console.log(err))
   //res.data
@@ -60,70 +65,71 @@ export const getRecipeById = (id, includeNutrition = true) => {
 // Input ids as an array
 export const getMultipleRecipes = (ids, includeNutrition = true) => {
   const idString = ids.join(',');
+  return axios.get(`https://api.spoonacular.com/recipes/informationBulk?ids=${idString}&includeNutrition=${includeNutrition}&apiKey=${key.apiKey_spoon}`);
 
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "ids": idString,
-      "includeNutrition": `${includeNutrition}`
-    }
-  })
-    // .then(res => console.log(res))
-    // .catch(err => console.log(err))
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/informationBulk",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "ids": idString,
+  //     "includeNutrition": `${includeNutrition}`
+  //   }
+  // })
 };
 
 // Ingredients as array. Ranking 1 means maximize used ingredients and ranking 2 means minimize missed ingredients
 export const getRecipesByIngredients = (ingredients, limit = 12, ranking = 1, ignorePantry = true) => {
   const query = ingredients.join(',');
-  // return axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${query}&ranking=${ranking}&ignorePantry=${ignorePantry}&number=${limit}&apiKey=${apiKey}`);
-
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "number": `${limit}`,
-      "ranking": `${ranking}`,
-      "ignorePantry": `${ignorePantry}`,
-      "ingredients": `${query}`
-    }
-  })
+  return axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${query}&ranking=${ranking}&ignorePantry=${ignorePantry}&number=${limit}&apiKey=${key.apiKey_spoon}`);
     // .then((response) => {
+    //   debugger
     //   console.log(response)
     // })
     // .catch((error) => {
     //   console.log(error)
     // })
+
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "number": `${limit}`,
+  //     "ranking": `${ranking}`,
+  //     "ignorePantry": `${ignorePantry}`,
+  //     "ingredients": `${query}`
+  //   }
+  //})
+
 };
 
 
 // Search for recipe by name.  Returns title and id of recipe. Will return anything that starts with query string.
 export const searchRecipeByName = (name, limit = 5) => {
-  // return axios.get(`https://api.spoonacular.com/recipes/autocomplete?query=${name}&number=${limit}&apiKey=${apiKey}`);
+  return axios.get(`https://api.spoonacular.com/recipes/autocomplete?query=${name}&number=${limit}&apiKey=${key.apiKey_spoon}`);
 
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/autocomplete",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "number": `${limit}`,
-      "query": name
-    }
-  })
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/autocomplete",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "number": `${limit}`,
+  //     "query": name
+  //   }
+  // })
     // .then((response) => {
     //   console.log(response)
     // })
@@ -212,43 +218,43 @@ export const complexRecipeSearch = (
 
 
 export const getSimilarRecipes = (id, limit = 5) => {
-  // return axios.get(`https://api.spoonacular.com/recipes/${id}/similar?number=${limit}&apiKey=${apiKey}`);
-  axios({
-    "method": "GET",
-    "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/similar`,
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    },
-    "params": {
-      "number": `${limit}`
-    },
-  })
+  return axios.get(`https://api.spoonacular.com/recipes/${id}/similar?number=${limit}&apiKey=${key.apiKey_spoon}`);
+  // axios({
+  //   "method": "GET",
+  //   "url": `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/similar`,
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   },
+  //   "params": {
+  //     "number": `${limit}`
+  //   },
+  // })
     // .then((response) => {
     //   console.log(response)
     // })
-    .catch((error) => {
-      console.log(error)
-    })
+    // .catch((error) => {
+    //   console.log(error)
+    // })
 };
 
 
 
 // Extract recipe from site url and return as object
 export const extractRecipe = (url) => {
-  // return axios.get(`https://api.spoonacular.com/recipes/extract?url=${url}&apiKey=${apiKey}`);
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/extract",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, "params": {
-      "url": url
-    }
-  })
+  return axios.get(`https://api.spoonacular.com/recipes/extract?url=${url}&apiKey=${key.apiKey_spoon}`);
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/extract",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, "params": {
+  //     "url": url
+  //   }
+  // })
     // .then((response) => {
     //   console.log(response)
     // })

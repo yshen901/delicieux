@@ -160,7 +160,9 @@ export const getRecipesByIngredients = (ingredients, limit, ranking, ignorePantr
   RecipeAPI
     .getRecipesByIngredients(ingredients, limit, ranking, ignorePantry)
     .then(
-      ({ data }) => {
+      (results) => {
+        debugger
+        let {data} = results
         let recipeIds = data.map(recipe => recipe.id);
         dispatch(getMultipleRecipes(recipeIds));
       },

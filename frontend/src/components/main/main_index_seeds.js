@@ -2,175 +2,175 @@ export const recipe1 = {
   image: "https://spoonacular.com/recipeImages/346466-556x370.jpeg",
   nutrition: [
     {
-      title: "Calories",
+      name: "Calories",
       amount: 458.75,
       unit: "cal",
       percentOfDailyNeeds: 22.94
     },
     {
-      title: "Fat",
+      name: "Fat",
       amount: 24.91,
       unit: "g",
       percentOfDailyNeeds: 38.32
     },
     {
-      title: "Saturated Fat",
+      name: "Saturated Fat",
       amount: 8.05,
       unit: "g",
       percentOfDailyNeeds: 50.28
     },
     {
-      title: "Carbohydrates",
+      name: "Carbohydrates",
       amount: 16.35,
       unit: "g",
       percentOfDailyNeeds: 5.45
     },
     {
-      title: "Sugar",
+      name: "Sugar",
       amount: 8.31,
       unit: "g",
       percentOfDailyNeeds: 9.23
     },
     {
-      title: "Cholesterol",
+      name: "Cholesterol",
       amount: 129.27,
       unit: "mg",
       percentOfDailyNeeds: 43.09
     },
     {
-      title: "Sodium",
+      name: "Sodium",
       amount: 1373.26,
       unit: "mg",
       percentOfDailyNeeds: 59.71
     },
     {
-      title: "Alcohol",
+      name: "Alcohol",
       amount: 2.15,
       unit: "g",
       percentOfDailyNeeds: 11.93
     },
     {
-      title: "Protein",
+      name: "Protein",
       amount: 37.62,
       unit: "g",
       percentOfDailyNeeds: 75.24
     },
     {
-      title: "Vitamin B3",
+      name: "Vitamin B3",
       amount: 13.18,
       unit: "mg",
       percentOfDailyNeeds: 65.88
     },
     {
-      title: "Vitamin B6",
+      name: "Vitamin B6",
       amount: 1.09,
       unit: "mg",
       percentOfDailyNeeds: 54.69
     },
     {
-      title: "Phosphorus",
+      name: "Phosphorus",
       amount: 526.18,
       unit: "mg",
       percentOfDailyNeeds: 52.62
     },
     {
-      title: "Copper",
+      name: "Copper",
       amount: 1.01,
       unit: "mg",
       percentOfDailyNeeds: 50.75
     },
     {
-      title: "Selenium",
+      name: "Selenium",
       amount: 30.91,
       unit: "µg",
       percentOfDailyNeeds: 44.16
     },
     {
-      title: "Iron",
+      name: "Iron",
       amount: 7.74,
       unit: "mg",
       percentOfDailyNeeds: 43.02
     },
     {
-      title: "Zinc",
+      name: "Zinc",
       amount: 5.03,
       unit: "mg",
       percentOfDailyNeeds: 33.54
     },
     {
-      title: "Vitamin B2",
+      name: "Vitamin B2",
       amount: 0.53,
       unit: "mg",
       percentOfDailyNeeds: 31.17
     },
     {
-      title: "Vitamin B1",
+      name: "Vitamin B1",
       amount: 0.45,
       unit: "mg",
       percentOfDailyNeeds: 30.21
     },
     {
-      title: "Vitamin K",
+      name: "Vitamin K",
       amount: 27.21,
       unit: "µg",
       percentOfDailyNeeds: 25.91
     },
     {
-      title: "Manganese",
+      name: "Manganese",
       amount: 0.34,
       unit: "mg",
       percentOfDailyNeeds: 17.03
     },
     {
-      title: "Magnesium",
+      name: "Magnesium",
       amount: 58.02,
       unit: "mg",
       percentOfDailyNeeds: 14.51
     },
     {
-      title: "Vitamin C",
+      name: "Vitamin C",
       amount: 11.88,
       unit: "mg",
       percentOfDailyNeeds: 14.4
     },
     {
-      title: "Vitamin B5",
+      name: "Vitamin B5",
       amount: 1.44,
       unit: "mg",
       percentOfDailyNeeds: 14.35
     },
     {
-      title: "Potassium",
+      name: "Potassium",
       amount: 465.13,
       unit: "mg",
       percentOfDailyNeeds: 13.29
     },
     {
-      title: "Vitamin B12",
+      name: "Vitamin B12",
       amount: 0.76,
       unit: "µg",
       percentOfDailyNeeds: 12.65
     },
     {
-      title: "Vitamin A",
+      name: "Vitamin A",
       amount: 523,
       unit: "IU",
       percentOfDailyNeeds: 10.46
     },
     {
-      title: "Fiber",
+      name: "Fiber",
       amount: 2.06,
       unit: "g",
       percentOfDailyNeeds: 8.26
     },
     {
-      title: "Folate",
+      name: "Folate",
       amount: 25.26,
       unit: "µg",
       percentOfDailyNeeds: 6.31
     },
     {
-      title: "Calcium",
+      name: "Calcium",
       amount: 48.19,
       unit: "mg",
       percentOfDailyNeeds: 4.82
@@ -386,151 +386,151 @@ export const recipe2 = {
   image: "https://spoonacular.com/recipeImages/484740-556x370.jpg",
   nutrition: [
     {
-      title: "Calories",
+      name: "Calories",
       amount: 654.67,
       unit: "cal",
       percentOfDailyNeeds: 32.73
     },
     {
-      title: "Fat",
+      name: "Fat",
       amount: 28.29,
       unit: "g",
       percentOfDailyNeeds: 43.52
     },
     {
-      title: "Saturated Fat",
+      name: "Saturated Fat",
       amount: 10.21,
       unit: "g",
       percentOfDailyNeeds: 63.82
     },
     {
-      title: "Carbohydrates",
+      name: "Carbohydrates",
       amount: 10.21,
       unit: "g",
       percentOfDailyNeeds: 3.4
     },
     {
-      title: "Sugar",
+      name: "Sugar",
       amount: 9.01,
       unit: "g",
       percentOfDailyNeeds: 10.02
     },
     {
-      title: "Cholesterol",
+      name: "Cholesterol",
       amount: 257.21,
       unit: "mg",
       percentOfDailyNeeds: 85.74
     },
     {
-      title: "Sodium",
+      name: "Sodium",
       amount: 1369.43,
       unit: "mg",
       percentOfDailyNeeds: 59.54
     },
     {
-      title: "Protein",
+      name: "Protein",
       amount: 83.85,
       unit: "g",
       percentOfDailyNeeds: 167.7
     },
     {
-      title: "Vitamin B12",
+      name: "Vitamin B12",
       amount: 9.65,
       unit: "µg",
       percentOfDailyNeeds: 160.88
     },
     {
-      title: "Zinc",
+      name: "Zinc",
       amount: 15.81,
       unit: "mg",
       percentOfDailyNeeds: 105.38
     },
     {
-      title: "Vitamin B3",
+      name: "Vitamin B3",
       amount: 17.34,
       unit: "mg",
       percentOfDailyNeeds: 86.72
     },
     {
-      title: "Vitamin B2",
+      name: "Vitamin B2",
       amount: 1.27,
       unit: "mg",
       percentOfDailyNeeds: 74.89
     },
     {
-      title: "Phosphorus",
+      name: "Phosphorus",
       amount: 724.14,
       unit: "mg",
       percentOfDailyNeeds: 72.41
     },
     {
-      title: "Vitamin B6",
+      name: "Vitamin B6",
       amount: 1.41,
       unit: "mg",
       percentOfDailyNeeds: 70.6
     },
     {
-      title: "Selenium",
+      name: "Selenium",
       amount: 32.97,
       unit: "µg",
       percentOfDailyNeeds: 47.09
     },
     {
-      title: "Iron",
+      name: "Iron",
       amount: 7.8,
       unit: "mg",
       percentOfDailyNeeds: 43.33
     },
     {
-      title: "Potassium",
+      name: "Potassium",
       amount: 1114.15,
       unit: "mg",
       percentOfDailyNeeds: 31.83
     },
     {
-      title: "Vitamin B5",
+      name: "Vitamin B5",
       amount: 3.02,
       unit: "mg",
       percentOfDailyNeeds: 30.17
     },
     {
-      title: "Vitamin B1",
+      name: "Vitamin B1",
       amount: 0.41,
       unit: "mg",
       percentOfDailyNeeds: 27.44
     },
     {
-      title: "Copper",
+      name: "Copper",
       amount: 0.54,
       unit: "mg",
       percentOfDailyNeeds: 27.11
     },
     {
-      title: "Magnesium",
+      name: "Magnesium",
       amount: 82.84,
       unit: "mg",
       percentOfDailyNeeds: 20.71
     },
     {
-      title: "Manganese",
+      name: "Manganese",
       amount: 0.16,
       unit: "mg",
       percentOfDailyNeeds: 7.77
     },
     {
-      title: "Calcium",
+      name: "Calcium",
       amount: 55.08,
       unit: "mg",
       percentOfDailyNeeds: 5.51
     },
     {
-      title: "Vitamin E",
+      name: "Vitamin E",
       amount: 0.68,
       unit: "mg",
       percentOfDailyNeeds: 4.5
     },
     {
-      title: "Vitamin K",
+      name: "Vitamin K",
       amount: 3.51,
       unit: "µg",
       percentOfDailyNeeds: 3.35
@@ -816,169 +816,169 @@ export const recipe3 = {
   image: "https://spoonacular.com/recipeImages/507153-556x370.jpg",
   nutrition: [
     {
-      title: "Calories",
+      name: "Calories",
       amount: 277.3,
       unit: "cal",
       percentOfDailyNeeds: 13.87
     },
     {
-      title: "Fat",
+      name: "Fat",
       amount: 19.15,
       unit: "g",
       percentOfDailyNeeds: 29.46
     },
     {
-      title: "Saturated Fat",
+      name: "Saturated Fat",
       amount: 2.77,
       unit: "g",
       percentOfDailyNeeds: 17.31
     },
     {
-      title: "Carbohydrates",
+      name: "Carbohydrates",
       amount: 23.59,
       unit: "g",
       percentOfDailyNeeds: 7.86
     },
     {
-      title: "Sugar",
+      name: "Sugar",
       amount: 10.24,
       unit: "g",
       percentOfDailyNeeds: 11.38
     },
     {
-      title: "Cholesterol",
+      name: "Cholesterol",
       amount: 0,
       unit: "mg",
       percentOfDailyNeeds: 0
     },
     {
-      title: "Sodium",
+      name: "Sodium",
       amount: 577.71,
       unit: "mg",
       percentOfDailyNeeds: 25.12
     },
     {
-      title: "Protein",
+      name: "Protein",
       amount: 7.3,
       unit: "g",
       percentOfDailyNeeds: 14.6
     },
     {
-      title: "Vitamin A",
+      name: "Vitamin A",
       amount: 12639.31,
       unit: "IU",
       percentOfDailyNeeds: 252.79
     },
     {
-      title: "Vitamin C",
+      name: "Vitamin C",
       amount: 160.87,
       unit: "mg",
       percentOfDailyNeeds: 194.99
     },
     {
-      title: "Vitamin K",
+      name: "Vitamin K",
       amount: 54.17,
       unit: "µg",
       percentOfDailyNeeds: 51.59
     },
     {
-      title: "Fiber",
+      name: "Fiber",
       amount: 12.26,
       unit: "g",
       percentOfDailyNeeds: 49.04
     },
     {
-      title: "Folate",
+      name: "Folate",
       amount: 134.79,
       unit: "µg",
       percentOfDailyNeeds: 33.7
     },
     {
-      title: "Vitamin B6",
+      name: "Vitamin B6",
       amount: 0.57,
       unit: "mg",
       percentOfDailyNeeds: 28.53
     },
     {
-      title: "Manganese",
+      name: "Manganese",
       amount: 0.55,
       unit: "mg",
       percentOfDailyNeeds: 27.25
     },
     {
-      title: "Vitamin E",
+      name: "Vitamin E",
       amount: 3.97,
       unit: "mg",
       percentOfDailyNeeds: 26.5
     },
     {
-      title: "Potassium",
+      name: "Potassium",
       amount: 882.92,
       unit: "mg",
       percentOfDailyNeeds: 25.23
     },
     {
-      title: "Vitamin B5",
+      name: "Vitamin B5",
       amount: 1.85,
       unit: "mg",
       percentOfDailyNeeds: 18.48
     },
     {
-      title: "Vitamin B3",
+      name: "Vitamin B3",
       amount: 3.4,
       unit: "mg",
       percentOfDailyNeeds: 17.02
     },
     {
-      title: "Vitamin B2",
+      name: "Vitamin B2",
       amount: 0.25,
       unit: "mg",
       percentOfDailyNeeds: 14.5
     },
     {
-      title: "Magnesium",
+      name: "Magnesium",
       amount: 51.49,
       unit: "mg",
       percentOfDailyNeeds: 12.87
     },
     {
-      title: "Copper",
+      name: "Copper",
       amount: 0.25,
       unit: "mg",
       percentOfDailyNeeds: 12.55
     },
     {
-      title: "Phosphorus",
+      name: "Phosphorus",
       amount: 109.24,
       unit: "mg",
       percentOfDailyNeeds: 10.92
     },
     {
-      title: "Vitamin B1",
+      name: "Vitamin B1",
       amount: 0.16,
       unit: "mg",
       percentOfDailyNeeds: 10.82
     },
     {
-      title: "Iron",
+      name: "Iron",
       amount: 1.47,
       unit: "mg",
       percentOfDailyNeeds: 8.19
     },
     {
-      title: "Zinc",
+      name: "Zinc",
       amount: 1.05,
       unit: "mg",
       percentOfDailyNeeds: 7.02
     },
     {
-      title: "Calcium",
+      name: "Calcium",
       amount: 50.16,
       unit: "mg",
       percentOfDailyNeeds: 5.02
     },
     {
-      title: "Selenium",
+      name: "Selenium",
       amount: 0.95,
       unit: "µg",
       percentOfDailyNeeds: 1.36
@@ -1158,187 +1158,187 @@ export const recipe4 = {
   image: "https://spoonacular.com/recipeImages/546788-556x370.jpg",
   nutrition: [
     {
-      title: "Calories",
+      name: "Calories",
       amount: 369.99,
       unit: "cal",
       percentOfDailyNeeds: 18.5
     },
     {
-      title: "Fat",
+      name: "Fat",
       amount: 20.42,
       unit: "g",
       percentOfDailyNeeds: 31.42
     },
     {
-      title: "Saturated Fat",
+      name: "Saturated Fat",
       amount: 12.41,
       unit: "g",
       percentOfDailyNeeds: 77.57
     },
     {
-      title: "Carbohydrates",
+      name: "Carbohydrates",
       amount: 42.59,
       unit: "g",
       percentOfDailyNeeds: 14.2
     },
     {
-      title: "Sugar",
+      name: "Sugar",
       amount: 23.75,
       unit: "g",
       percentOfDailyNeeds: 26.39
     },
     {
-      title: "Cholesterol",
+      name: "Cholesterol",
       amount: 86.48,
       unit: "mg",
       percentOfDailyNeeds: 28.83
     },
     {
-      title: "Sodium",
+      name: "Sodium",
       amount: 32.09,
       unit: "mg",
       percentOfDailyNeeds: 1.4
     },
     {
-      title: "Alcohol",
+      name: "Alcohol",
       amount: 0.75,
       unit: "g",
       percentOfDailyNeeds: 4.14
     },
     {
-      title: "Protein",
+      name: "Protein",
       amount: 4.43,
       unit: "g",
       percentOfDailyNeeds: 8.85
     },
     {
-      title: "Manganese",
+      name: "Manganese",
       amount: 0.33,
       unit: "mg",
       percentOfDailyNeeds: 16.68
     },
     {
-      title: "Vitamin A",
+      name: "Vitamin A",
       amount: 761.24,
       unit: "IU",
       percentOfDailyNeeds: 15.22
     },
     {
-      title: "Selenium",
+      name: "Selenium",
       amount: 10.3,
       unit: "µg",
       percentOfDailyNeeds: 14.72
     },
     {
-      title: "Folate",
+      name: "Folate",
       amount: 50.32,
       unit: "µg",
       percentOfDailyNeeds: 12.58
     },
     {
-      title: "Vitamin B1",
+      name: "Vitamin B1",
       amount: 0.19,
       unit: "mg",
       percentOfDailyNeeds: 12.54
     },
     {
-      title: "Vitamin B2",
+      name: "Vitamin B2",
       amount: 0.21,
       unit: "mg",
       percentOfDailyNeeds: 12.2
     },
     {
-      title: "Phosphorus",
+      name: "Phosphorus",
       amount: 119.59,
       unit: "mg",
       percentOfDailyNeeds: 11.96
     },
     {
-      title: "Vitamin C",
+      name: "Vitamin C",
       amount: 7.71,
       unit: "mg",
       percentOfDailyNeeds: 9.35
     },
     {
-      title: "Fiber",
+      name: "Fiber",
       amount: 2.29,
       unit: "g",
       percentOfDailyNeeds: 9.15
     },
     {
-      title: "Calcium",
+      name: "Calcium",
       amount: 79.36,
       unit: "mg",
       percentOfDailyNeeds: 7.94
     },
     {
-      title: "Iron",
+      name: "Iron",
       amount: 1.4,
       unit: "mg",
       percentOfDailyNeeds: 7.78
     },
     {
-      title: "Vitamin B3",
+      name: "Vitamin B3",
       amount: 1.44,
       unit: "mg",
       percentOfDailyNeeds: 7.2
     },
     {
-      title: "Vitamin E",
+      name: "Vitamin E",
       amount: 0.86,
       unit: "mg",
       percentOfDailyNeeds: 5.73
     },
     {
-      title: "Potassium",
+      name: "Potassium",
       amount: 187.16,
       unit: "mg",
       percentOfDailyNeeds: 5.35
     },
     {
-      title: "Vitamin D",
+      name: "Vitamin D",
       amount: 0.7,
       unit: "µg",
       percentOfDailyNeeds: 4.64
     },
     {
-      title: "Vitamin B5",
+      name: "Vitamin B5",
       amount: 0.42,
       unit: "mg",
       percentOfDailyNeeds: 4.16
     },
     {
-      title: "Magnesium",
+      name: "Magnesium",
       amount: 15.68,
       unit: "mg",
       percentOfDailyNeeds: 3.92
     },
     {
-      title: "Copper",
+      name: "Copper",
       amount: 0.07,
       unit: "mg",
       percentOfDailyNeeds: 3.72
     },
     {
-      title: "Vitamin K",
+      name: "Vitamin K",
       amount: 3.71,
       unit: "µg",
       percentOfDailyNeeds: 3.53
     },
     {
-      title: "Vitamin B12",
+      name: "Vitamin B12",
       amount: 0.19,
       unit: "µg",
       percentOfDailyNeeds: 3.23
     },
     {
-      title: "Zinc",
+      name: "Zinc",
       amount: 0.48,
       unit: "mg",
       percentOfDailyNeeds: 3.22
     },
     {
-      title: "Vitamin B6",
+      name: "Vitamin B6",
       amount: 0.05,
       unit: "mg",
       percentOfDailyNeeds: 2.46
@@ -1695,175 +1695,175 @@ export const recipe5 = {
   image: "https://spoonacular.com/recipeImages/763154-556x370.jpg",
   nutrition: [
     {
-      title: "Calories",
+      name: "Calories",
       amount: 717.81,
       unit: "cal",
       percentOfDailyNeeds: 35.89
     },
     {
-      title: "Fat",
+      name: "Fat",
       amount: 41.09,
       unit: "g",
       percentOfDailyNeeds: 63.21
     },
     {
-      title: "Saturated Fat",
+      name: "Saturated Fat",
       amount: 15.15,
       unit: "g",
       percentOfDailyNeeds: 94.72
     },
     {
-      title: "Carbohydrates",
+      name: "Carbohydrates",
       amount: 69.33,
       unit: "g",
       percentOfDailyNeeds: 23.11
     },
     {
-      title: "Sugar",
+      name: "Sugar",
       amount: 5.02,
       unit: "g",
       percentOfDailyNeeds: 5.58
     },
     {
-      title: "Cholesterol",
+      name: "Cholesterol",
       amount: 29.63,
       unit: "mg",
       percentOfDailyNeeds: 9.88
     },
     {
-      title: "Sodium",
+      name: "Sodium",
       amount: 952.21,
       unit: "mg",
       percentOfDailyNeeds: 41.4
     },
     {
-      title: "Protein",
+      name: "Protein",
       amount: 17.14,
       unit: "g",
       percentOfDailyNeeds: 34.29
     },
     {
-      title: "Manganese",
+      name: "Manganese",
       amount: 0.71,
       unit: "mg",
       percentOfDailyNeeds: 35.49
     },
     {
-      title: "Vitamin B1",
+      name: "Vitamin B1",
       amount: 0.4,
       unit: "mg",
       percentOfDailyNeeds: 26.5
     },
     {
-      title: "Folate",
+      name: "Folate",
       amount: 105.17,
       unit: "µg",
       percentOfDailyNeeds: 26.29
     },
     {
-      title: "Phosphorus",
+      name: "Phosphorus",
       amount: 254.71,
       unit: "mg",
       percentOfDailyNeeds: 25.47
     },
     {
-      title: "Vitamin C",
+      name: "Vitamin C",
       amount: 19.51,
       unit: "mg",
       percentOfDailyNeeds: 23.65
     },
     {
-      title: "Calcium",
+      name: "Calcium",
       amount: 232.73,
       unit: "mg",
       percentOfDailyNeeds: 23.27
     },
     {
-      title: "Iron",
+      name: "Iron",
       amount: 4.04,
       unit: "mg",
       percentOfDailyNeeds: 22.44
     },
     {
-      title: "Selenium",
+      name: "Selenium",
       amount: 14.23,
       unit: "µg",
       percentOfDailyNeeds: 20.33
     },
     {
-      title: "Vitamin B2",
+      name: "Vitamin B2",
       amount: 0.34,
       unit: "mg",
       percentOfDailyNeeds: 20.26
     },
     {
-      title: "Vitamin B3",
+      name: "Vitamin B3",
       amount: 3.85,
       unit: "mg",
       percentOfDailyNeeds: 19.27
     },
     {
-      title: "Fiber",
+      name: "Fiber",
       amount: 4.15,
       unit: "g",
       percentOfDailyNeeds: 16.59
     },
     {
-      title: "Vitamin B12",
+      name: "Vitamin B12",
       amount: 0.86,
       unit: "µg",
       percentOfDailyNeeds: 14.25
     },
     {
-      title: "Vitamin A",
+      name: "Vitamin A",
       amount: 626.33,
       unit: "IU",
       percentOfDailyNeeds: 12.53
     },
     {
-      title: "Zinc",
+      name: "Zinc",
       amount: 1.83,
       unit: "mg",
       percentOfDailyNeeds: 12.23
     },
     {
-      title: "Vitamin K",
+      name: "Vitamin K",
       amount: 12.73,
       unit: "µg",
       percentOfDailyNeeds: 12.12
     },
     {
-      title: "Potassium",
+      name: "Potassium",
       amount: 363.23,
       unit: "mg",
       percentOfDailyNeeds: 10.38
     },
     {
-      title: "Vitamin B6",
+      name: "Vitamin B6",
       amount: 0.19,
       unit: "mg",
       percentOfDailyNeeds: 9.35
     },
     {
-      title: "Magnesium",
+      name: "Magnesium",
       amount: 36.96,
       unit: "mg",
       percentOfDailyNeeds: 9.24
     },
     {
-      title: "Copper",
+      name: "Copper",
       amount: 0.18,
       unit: "mg",
       percentOfDailyNeeds: 8.79
     },
     {
-      title: "Vitamin E",
+      name: "Vitamin E",
       amount: 1.07,
       unit: "mg",
       percentOfDailyNeeds: 7.14
     },
     {
-      title: "Vitamin B5",
+      name: "Vitamin B5",
       amount: 0.7,
       unit: "mg",
       percentOfDailyNeeds: 6.98
@@ -2075,27 +2075,27 @@ export const recipe6 = {
   image: "https://spoonacular.com/recipeImages/695295-312x231.jpg",
   nutrition: [
     {
-      title: "Calories",
+      name: "Calories",
       amount: 239.31,
       unit: "cal"
     },
     {
-      title: "Protein",
+      name: "Protein",
       amount: 30.4776,
       unit: "g"
     },
     {
-      title: "Fat",
+      name: "Fat",
       amount: 6.47017,
       unit: "g"
     },
     {
-      title: "Carbohydrates",
+      name: "Carbohydrates",
       amount: 16.9525,
       unit: "g"
     },
     {
-      title: "Fiber",
+      name: "Fiber",
       amount: 6.76247,
       unit: "g"
     }
