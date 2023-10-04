@@ -181,6 +181,28 @@ export const complexRecipeSearch = (
   //   () => abort.cancel(`Timeout of ${config.timeout}ms.`),
   //   10000)
 
+  return axios.get([
+    `https://api.spoonacular.com/recipes/complexSearch?`,
+    `query=${search}&`,
+    `cuisine=${cuisine}&`,
+    `diet=${dietStr}&`,
+    `intolerances=${intolerances}&`,
+    `sort=${sort}&`,
+    `sortDirection=${sortDirection}&`,
+    `minCalories=${minCalories}&`,
+    `maxCalories=${maxCalories}&`,
+    `maxFat=${maxFat}&`,
+    `maxCarbs=${maxCarbs}&`,
+    `minProtein=${minProtein}&`,
+    `maxFiber=${100}&`,
+    `ignorePantry=${ignorePantry}&`,
+    `number=${limit}&`,
+    `addRecipeInformation=true&`,
+    `fillIngredients=true&`,
+    `instructionsRequired=true&`,
+    `apiKey=${key.apiKey_spoon}`
+  ].join(""));
+
   return axios({
     "method": "GET",
     "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch",

@@ -27,6 +27,9 @@ export default class RecipeShow extends React.Component {
   componentDidMount() {
     const { recipe, fridge } = this.props;
     debugger
+    if (recipe.nutrition.length == 1) {
+      recipe.nutrition = recipe.nutrition[0].nutrients
+    }
     let calories = Object.values(recipe.nutrition).filter(nutrient => ["Calories"].includes(nutrient.name))[0].amount;
     let protein = Object.values(recipe.nutrition).filter(nutrient => ["Protein"].includes(nutrient.name))[0].amount;
     let fat = Object.values(recipe.nutrition).filter(nutrient => ["Fat"].includes(nutrient.name))[0].amount;
