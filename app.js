@@ -17,9 +17,10 @@ CHANGE2025:
   - useCreateIndex: true ... fixes "collection.ensureIndex is depreciated. Use createIndexes instead."
 */     
 
+// MONGOOSE_UPDATE: Options are depreciated after upgrading to mongoose 7
 mongoose
   .connect(db, { 
-    // useNewUrlParser: true, 
+    // useNewUrlParser: true,
     // useUnifiedTopology: true,
     // useFindAndModify: false,
     // useCreateIndex: true
