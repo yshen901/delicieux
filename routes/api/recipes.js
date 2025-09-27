@@ -5,7 +5,7 @@ const Recipe = require('../../models/Recipe');
 router.get("/test", (req, res) => res.json({ msg: "This is the recipes route for meal plan" }));
 
 // Return recipe by a specific id,
-// NOTE: FINDONE ALWAYS SUCCEEDS...DOESN'T RETURN A PROMISE
+// NOTE: FINDONE RETURNS A PROMISE, BUT ALWAYS SUCCEEDS...SO ERROR HANDLING MUST BE IN THEN
 router.get('/:recipeId', (req, res) => {
   Recipe.findOne({ recipeId: req.params.recipeId })
     .then(
