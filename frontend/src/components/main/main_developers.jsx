@@ -55,7 +55,7 @@ class MainDevelopers extends React.Component {
             <div className="main-developer">
               <div className="dev-left">
                 <div className="dev-image">
-                  <img className="main-developer-image" src={Kelly} alt=""/>
+                  <img className="main-developer-image" src={Kelly} alt=""/> 
                 </div>
                 <div className="main-developer-name">Kelly Ku</div>
               </div>

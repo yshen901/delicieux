@@ -34,7 +34,10 @@ export default class WeeklyMacro extends React.Component {
     this.handleBarOff = this.handleBarOff.bind(this);
   }
   componentDidMount() {
-    let { calories, carbs, protein, fat } = this.props;
+    //CHANGED2025: UNUSED
+    // let { calories, carbs, protein, fat } = this.props;
+    let { carbs, protein, fat } = this.props;
+
     this.state.nutritionReq = Object.assign({}, this.props);
     let calorieAc = (carbs * 4) + (protein * 4) + (fat * 9);
     let carbPer = Math.round(carbs * 4 / calorieAc * 1000) / 10;

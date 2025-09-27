@@ -72,7 +72,7 @@ class RecipeIndexItem extends React.Component {
         onClick={() => this.handleModal(recipe)}
       >
         <div className="recipe-index-item-image">
-          <img src={image} draggable="false" />
+          <img src={image} draggable="false" alt=""/>
         </div>
         {/* <div className="recipe-index-item-remove" onClick={rotateToBack}>X</div> */}
         <div className="title-time">

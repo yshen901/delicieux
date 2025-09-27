@@ -415,9 +415,9 @@ export default class MainFilter extends React.Component {
 
   render() {
 
-    let includeFridge;
-
-    this.state.includeFridge ? includeFridge = "include-fridge" : includeFridge = "";
+    //CHANGE2025: UNUSED
+    // let includeFridge;
+    // this.state.includeFridge ? includeFridge = "include-fridge" : includeFridge = "";
 
 
     return(
