@@ -161,7 +161,7 @@ export const getRecipesByIngredients = (ingredients, limit, ranking, ignorePantr
     .getRecipesByIngredients(ingredients, limit, ranking, ignorePantry)
     .then(
       (results) => {
-        debugger
+        // debugger
         let {data} = results
         let recipeIds = data.map(recipe => recipe.id);
         dispatch(getMultipleRecipes(recipeIds));

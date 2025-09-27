@@ -32,7 +32,7 @@ export default class RecipeShow extends React.Component {
     // const { recipe, fridge } = this.props;
     const { recipe } = this.props;
 
-    debugger
+    // debugger
 
     //CHANGE2025: Changed == (loose equality) to === (strict equality, type and value), since the type should be the same
     if (recipe.nutrition.length === 1) {
