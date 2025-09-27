@@ -112,7 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   
   window.store = store;
-  ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+
+  // REACT_UPGRADE: ReactDOM render is deprecated
+  // ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+
+  const container = document.getElementById("root");
+  const root = createRoot(container)
+  root.render(<Root store={store} />)
 });
 
 
