@@ -40,12 +40,21 @@ router.patch("/:cartId/addMeal/", (req, res) => {
   let update = { $set: {} };
   update["$set"][`dates.${req.body.date}.${req.body.time}`] = req.body.recipeId;
 
+  // MONGOOSE_UPDATE: No longer accepts a callback
+  // Cart.findOneAndUpdate(
+  //   { _id: req.params.cartId },
+  //   update,
+  //   options,
+  //   (err, result) => (err ? res.status(400).json(err) : res.json(result))
+  // )
   Cart.findOneAndUpdate(
     { _id: req.params.cartId },
     update,
-    options,
-    (err, result) => (err ? res.status(400).json(err) : res.json(result))
-  );
+    options
+  )
+  .then(result => res.json(result))
+  .catch(err => res.status(400).json(err))
+  
 });
 
 module.exports = router;
