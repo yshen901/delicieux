@@ -11,8 +11,18 @@ const recipes = require('./routes/api/recipes');
 const fridge = require('./routes/api/fridge');
 const carts = require('./routes/api/carts');
 
+/*
+CHANGE2025:
+  - useFindAndModify: false ... fixes "`findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated."
+  - useCreateIndex: true ... fixes "collection.ensureIndex is depreciated. Use createIndexes instead."
+*/     
 mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(db, { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
