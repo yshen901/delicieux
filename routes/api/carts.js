@@ -27,12 +27,20 @@ router.patch('/:cartId/addDate/', (req, res) => {
     "STATUS": {},
   };
 
+  // MONGOOSE_UPDATE: No longer accepts a callback
+  // Cart.findOneAndUpdate(
+  //   { _id: req.params.cartId },
+  //   update,
+  //   options,
+  //   (err, result) => (err ? res.status(400).json(err) : res.json(result))
+  // )
   Cart.findOneAndUpdate(
-    { _id: req.params.cartId }, 
+    { _id: req.params.cartId },
     update,
-    options, 
-    (err, result) => err ? res.status(400).json(err) : res.json(result)
+    options
   )
+  .then(result => res.json(result))
+  .catch(err => res.status(400).json(err))
 });
 
 router.patch("/:cartId/addMeal/", (req, res) => {
@@ -54,7 +62,7 @@ router.patch("/:cartId/addMeal/", (req, res) => {
   )
   .then(result => res.json(result))
   .catch(err => res.status(400).json(err))
-  
+
 });
 
 module.exports = router;
