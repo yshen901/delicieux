@@ -64,7 +64,7 @@ class RecipeIndex extends React.Component {
   updateRecipes() {
     this.setState({ loading: true });
     this.props.getRecipes(this.props.recipe_filters)
-      .then(
+      .then(  
         () => this.setState({ loading: false }),
         () => this.setState({ loading: false })
       )
@@ -79,7 +79,7 @@ class RecipeIndex extends React.Component {
       return (
         <div className="loading-cont">
           <div className="loading-img-cont">
-            <img className="loading-img" src={flip}/> 
+            <img className="loading-img" src={flip} alt=""/> 
           </div>
         </div>
       )

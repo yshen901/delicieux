@@ -1,7 +1,10 @@
 import React from 'react';
 import '../stylesheets/recipes_index/recipe_show.scss'
-import { VictoryPie, VictoryTooltip, VictoryLabel, VictoryChart, VictoryLegend, VictoryContainer } from 'victory';
 import { calorieCalc } from '../../util/calorie_util';
+
+//CHANGE2025: Removed unused definitions
+// import { VictoryPie, VictoryTooltip, VictoryLabel, VictoryChart, VictoryLegend, VictoryContainer } from 'victory';
+import { VictoryPie, VictoryLabel } from 'victory';
 
 export default class RecipeShow extends React.Component {
   constructor(props) {
@@ -25,12 +28,20 @@ export default class RecipeShow extends React.Component {
 
   }
   componentDidMount() {
-    const { recipe, fridge } = this.props;
+    //CHANGE2025: Removed unused variables
+    // const { recipe, fridge } = this.props;
+    const { recipe } = this.props;
+
     debugger
-    if (recipe.nutrition.length == 1) {
+
+    //CHANGE2025: Changed == (loose equality) to === (strict equality, type and value), since the type should be the same
+    if (recipe.nutrition.length === 1) {
       recipe.nutrition = recipe.nutrition[0].nutrients
     }
-    let calories = Object.values(recipe.nutrition).filter(nutrient => ["Calories"].includes(nutrient.name))[0].amount;
+
+    //CHANGE2025: Removed unused variables
+    // let calories = Object.values(recipe.nutrition).filter(nutrient => ["Calories"].includes(nutrient.name))[0].amount;
+    
     let protein = Object.values(recipe.nutrition).filter(nutrient => ["Protein"].includes(nutrient.name))[0].amount;
     let fat = Object.values(recipe.nutrition).filter(nutrient => ["Fat"].includes(nutrient.name))[0].amount;
     let carbohydrates = Object.values(recipe.nutrition).filter(nutrient => ["Carbohydrates"].includes(nutrient.name))[0].amount;
@@ -81,8 +92,13 @@ export default class RecipeShow extends React.Component {
     }
   }
   render() {
-    const { recipe, fridge, user } = this.props;
-    let fridgeList = fridge.ingredients ? Object.values(fridge.ingredients).map((el) => el.name) : [];
+    //CHANGE2025: Removed unused variables
+    // const { recipe, fridge, user } = this.props;
+    const { recipe, user } = this.props;
+
+    //CHANGE2025: Removed unused variables
+    // let fridgeList = fridge.ingredients ? Object.values(fridge.ingredients).map((el) => el.name) : [];
+
     let calorieReq = calorieCalc(user) || 2000;
     let nutritionReq =  {
       "Calories": calorieReq ? calorieReq : 2000,
@@ -90,8 +106,10 @@ export default class RecipeShow extends React.Component {
       "Protein": calorieReq ? 80 * calorieReq/2000 : 80,
       "Fat": calorieReq ? 75 * calorieReq/2000 : 75,
       };
-    let timeC = recipe.readyInMinutes < 60 ? (recipe.readyInMinutes).toString() + "m" : 
-    recipe.readyInMinutes < 180 ? Math.floor(recipe.readyInMinutes/60).toString() + "h" : "3h+"
+
+    //CHANGE2025: Removed unused variables
+    // let timeC = recipe.readyInMinutes < 60 ? (recipe.readyInMinutes).toString() + "m" : 
+    // recipe.readyInMinutes < 180 ? Math.floor(recipe.readyInMinutes/60).toString() + "h" : "3h+"
 
     let chartDisp = this.state.pieChart ? (
       <div className="chart-cont" onClick={this.toggleChart}>
@@ -189,7 +207,9 @@ export default class RecipeShow extends React.Component {
         rightPanel = (
           <ol className="recipe-show-inst-list">
             {recipe.instructions[0].steps.map((step, idx) => {
-              let number = step.number;
+              //CHANGE2025: Removed unused variables
+              // let number = step.number;
+              
               let instr = step.step;
               return (
                 <li className="rs-li-item" key={idx}>
@@ -210,8 +230,11 @@ export default class RecipeShow extends React.Component {
       rightPanel = (
         <ul className="recipe-show-ing-list">
           {recipe.ingredients.map((ingredient, idx) => {
-            let ingrName = ingredient.name.split(" ");
-            let subName = ingrName[ingrName.length - 1];
+            
+            //CHANGE2025: Removed unused variables
+            // let ingrName = ingredient.name.split(" ");
+            // let subName = ingrName[ingrName.length - 1];
+
             // let listStyle = { color: fridgeList.includes(ingredient.name) ? "black" : fridgeList.includes(subName) ? "blue" : "red" };
             return (
               <li className="rs-li-item" key={idx} >
