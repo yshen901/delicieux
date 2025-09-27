@@ -17,10 +17,6 @@ class FormPersonalDetails extends React.Component {
     document.addEventListener("keydown", this.hitEnter);
   }
 
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.hitEnter);
-  }
-
   hitEnter(e) {
     if(e.key === "Enter") {
       const { email, name, password, password2, height, weight, age } = this.props.values;
@@ -28,7 +24,15 @@ class FormPersonalDetails extends React.Component {
     }
   }
 
+  // CHANGE2025: Removed duplicate componentWillUnmount, and merged them. In the original one, only the second one would run.
+  // componentWillUnmount() {
+  //   document.removeEventListener("keydown", this.hitEnter);
+  // }
+  // componentWillUnmount() {
+  //   this.props.clearErrors()
+  // }
   componentWillUnmount() {
+    document.removeEventListener("keydown", this.hitEnter);
     this.props.clearErrors()
   }
 

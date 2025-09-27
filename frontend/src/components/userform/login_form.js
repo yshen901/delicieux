@@ -29,14 +29,28 @@ class LoginForm extends React.Component {
 
   handleDemoLogin(email, password) {
     if (email.length > 0) {
-      this.setState({ email: (this.state.email += email.shift()) }, () =>
-        setTimeout(() => this.handleDemoLogin(email, password), 50)
-      );
-    } else if (password.length > 0) {
+      // CHANGE2025: Do not mutate state directly. Use setState()
+      // this.setState({ email: (this.state.email += email.shift()) }, () =>
+      //   setTimeout(() => this.handleDemoLogin(email, password), 50)
+      // );
       this.setState(
-        { password: (this.state.password += password.shift()) },
+        (prevState) => ({
+          email: prevState.email + email.shift()
+        }),
         () => setTimeout(() => this.handleDemoLogin(email, password), 50)
       );
+    } else if (password.length > 0) {
+      // CHANGE2025: Do not mutate state directly. Use setState()
+      // this.setState(
+      //   { password: (this.state.password += password.shift()) },
+      //   () => setTimeout(() => this.handleDemoLogin(email, password), 50)
+      // );
+      this.setState(
+        (prevState) => ({
+          password: prevState.password + password.shift()
+        }),
+        () => setTimeout(() => this.handleDemoLogin(email, password), 50)
+      )
     } else {
       this.props.login(this.state);
     }

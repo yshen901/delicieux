@@ -7,7 +7,9 @@ import key from './key';
 
 
 export const searchIngredientByName = (query = "", limit = 5, intolerances=[]) => {
-  const allergies = intolerances.join(",")
+  // CHANGE2025: Commented out unused variable
+  // const allergies = intolerances.join(",")
+  
   return axios.get(`https://api.spoonacular.com/food/ingredients/autocomplete?query=${query}&metaInformation=true&number=${limit}&apiKey=${key.apiKey_spoon}`);
   // return axios({
   //   "method": "GET",

@@ -203,38 +203,39 @@ export const complexRecipeSearch = (
     `apiKey=${key.apiKey_spoon}`
   ].join(""));
 
-  return axios({
-    "method": "GET",
-    "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-      "x-rapidapi-key": key.apiKey
-    }, 
-    "params": {
-      "query": search,
-      "cuisine": `${cuisine}`,
-      "diet": `${dietStr}`,
-      "intolerances": `${intolerances}`,
-      "sort": `${sort}`,
-      "sortDirection": `${sortDirection}`,
-      "minCalories": `${minCalories}`,
-      "maxCalories": `${maxCalories}`,
-      "maxFat": `${maxFat}`,
-      "maxCarbs": `${maxCarbs}`,
-      "minProtein": `${minProtein}`,
-      "maxFiber": "100",
-      "ignorePantry": `${ignorePantry}`,
-      "number": `${limit}`,
-      "addRecipeInformation": "true",
-      "fillIngredients": "true",
-      "instructionsRequired": "true"
-    },
-    // timeout: 5000
-  })
-  .catch((error)=>{
-    console.log("we error now")
-  })
+  // CHANGE2025: Commented out unreachable code.
+  // return axios({
+  //   "method": "GET",
+  //   "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch",
+  //   "headers": {
+  //     "content-type": "application/octet-stream",
+  //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+  //     "x-rapidapi-key": key.apiKey
+  //   }, 
+  //   "params": {
+  //     "query": search,
+  //     "cuisine": `${cuisine}`,
+  //     "diet": `${dietStr}`,
+  //     "intolerances": `${intolerances}`,
+  //     "sort": `${sort}`,
+  //     "sortDirection": `${sortDirection}`,
+  //     "minCalories": `${minCalories}`,
+  //     "maxCalories": `${maxCalories}`,
+  //     "maxFat": `${maxFat}`,
+  //     "maxCarbs": `${maxCarbs}`,
+  //     "minProtein": `${minProtein}`,
+  //     "maxFiber": "100",
+  //     "ignorePantry": `${ignorePantry}`,
+  //     "number": `${limit}`,
+  //     "addRecipeInformation": "true",
+  //     "fillIngredients": "true",
+  //     "instructionsRequired": "true"
+  //   },
+  //   // timeout: 5000
+  // })
+  // .catch((error)=>{
+  //   console.log("we error now")
+  // })
 };
 
 

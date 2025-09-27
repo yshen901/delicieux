@@ -17,7 +17,10 @@ class RecipeIndex extends React.Component {
 
   // Loads all of the recipes upon mounting
   componentDidMount() {
-    let { user, fridge, fetchFridge, getRecipesByIngredients, getRandomRecipes, startLoad, loading} = this.props;  
+    // CHANGE2025: Removed unused element "fridge"
+    // let { user, fridge, fetchFridge, getRecipesByIngredients, getRandomRecipes, startLoad, loading} = this.props;  
+    let { user, fetchFridge, getRecipesByIngredients, getRandomRecipes, startLoad, loading} = this.props;  
+
     startLoad("loading");
     setTimeout(() => {
       if(loading)
@@ -67,6 +70,7 @@ class RecipeIndex extends React.Component {
       )
   }
 
+  // CHANGE2025: Added alt="" to img to fix: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images
   render() {
     const { recipes, loading } = this.props;
     const indexRecipes = recipes.indexOrder.map((recipeId) => recipes[recipeId]);
@@ -75,7 +79,7 @@ class RecipeIndex extends React.Component {
       return (
         <div className="loading-cont">
           <div className="loading-img-cont">
-            <img className="loading-img" src={flip} />
+            <img className="loading-img" src={flip}/> 
           </div>
         </div>
       )
