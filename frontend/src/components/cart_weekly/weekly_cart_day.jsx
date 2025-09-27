@@ -120,7 +120,8 @@ class WeeklyCartDay extends React.Component {
                     <div className="weekly-cart-image">
                       <img className="weekly-cart-item-info-image"
                         src={this.recipe[time].image}
-                        onClick={(e) => this.openModal(e, this.recipe[time])} />
+                        onClick={(e) => this.openModal(e, this.recipe[time])} 
+                        alt=""/>
                     </div>
                   </div>
                 </div>

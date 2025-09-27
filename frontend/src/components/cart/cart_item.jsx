@@ -108,26 +108,26 @@ class CartItem extends React.Component {
                   <div className="cart-item-source">{recipe.sourceName}</div>
                 </div>
                 <div className="cart-image" >
-                  <img className="cart-item-info-image" src={recipe.image} />
+                  <img className="cart-item-info-image" src={recipe.image} alt=""/>
                 </div>
               </div>
 
               <div className="cart-item-bottom">
                 <div className="cuisine">
                   <div className="cuisine-image">
-                    <img src={Utensil} className="uten-icon"/>
+                    <img src={Utensil} className="uten-icon" alt=""/>
                   </div>
                   { recipe.cuisines && recipe.cuisines[0] ? recipe.cuisines[0] : "General"}
                 </div>
                 <div className="cuisine">
                   <div className="cuisine-image">
-                    <img src={Clock} className="uten-icon" />
+                    <img src={Clock} className="uten-icon" alt=""/>
                   </div>
                   {timeC}
                 </div>
                 <div className="cuisine">
                   <div className="cuisine-image">
-                    <img src={Calc} className="uten-icon" />
+                    <img src={Calc} className="uten-icon" alt=""/>
                   </div>
                   {calorieC}
                 </div>

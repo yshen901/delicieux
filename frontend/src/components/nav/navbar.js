@@ -37,7 +37,7 @@ class NavBar extends React.Component {
             <div className="nav-main">
               <div className="nav-left">
                 {/* <button className="nav-button" onClick={() => this.props.openSide("first")}> */}
-                  <img src={SideIcon} className="side-button" onClick={() => this.props.openSide("first")}/>
+                  <img src={SideIcon} className="side-button" onClick={() => this.props.openSide("first")} alt=""/>
                 {/* </button> */}
                 <Link className="nav-button" to="/index">Home</Link>
                 <Link className="nav-button" to="/fridge">Fridge</Link>

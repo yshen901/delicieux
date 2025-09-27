@@ -55,7 +55,7 @@ class MainDevelopers extends React.Component {
             <div className="main-developer">
               <div className="dev-left">
                 <div className="dev-image">
-                  <img className="main-developer-image" src={Kelly} />
+                  <img className="main-developer-image" src={Kelly} alt=""/>
                 </div>
                 <div className="main-developer-name">Kelly Ku</div>
               </div>
@@ -91,7 +91,7 @@ class MainDevelopers extends React.Component {
             <div className="main-developer">
               <div className="dev-left">
                 <div className="dev-image">
-                  <img className="main-developer-image" src={Yuci} />
+                  <img className="main-developer-image" src={Yuci} alt=""/>
                 </div>
                 <div className="main-developer-name">Yuci Shen</div>
               </div>
@@ -125,7 +125,7 @@ class MainDevelopers extends React.Component {
             <div className="main-developer">
               <div className="dev-left">
                 <div className="dev-image">
-                  <img className="main-developer-image" src={Youngjun} />
+                  <img className="main-developer-image" src={Youngjun} alt=""/>
                 </div>
                 <div className="main-developer-name">Youngjun Na</div>
               </div>
