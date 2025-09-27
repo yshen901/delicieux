@@ -1,4 +1,4 @@
-# <a href="https://delicieux.herokuapp.com/" target="_blank">Délicieux</a>
+# <a href="https://delicieux-app.herokuapp.com/" target="_blank">Délicieux</a>
 
 ![](https://github.com/jashieh/delicieux/blob/master/demo/landing.gif)
 
