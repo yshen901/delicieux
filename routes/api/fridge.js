@@ -22,11 +22,22 @@ router.patch('/:userId/addNewIngredient', (req, res) => {
   update["$set"]["ingredients." + req.body.id] = req.body;
 
   
-  Fridge.findOneAndUpdate({ userId: req.params.userId }, 
-    update, options, function (err, data){
-      if(err) return res.status(400).json(err);
-      return res.json(req.body);
-  });
+  // Fridge.findOneAndUpdate(
+  //   { userId: req.params.userId }, 
+  //   update, 
+  //   options, 
+  //   function (err, data) {
+  //     if(err) return res.status(400).json(err);
+  //     return res.json(req.body);
+  // });
+
+  Fridge.findOneAndUpdate(
+    { userId: req.params.userId }, 
+    update, 
+    options, 
+  )
+  .then(result => res.json(req.body))
+  .catch(err => res.status(400).json(err));
 });
 
 
@@ -64,9 +75,12 @@ router.patch('/:userId/modifyFridge', (req, res) => {
     update["$inc"]["ingredients." + id + ".amount"] = ingredients[id].amount;
   });
 
-  Fridge.findOneAndUpdate({ userId: req.params.userId }, 
-    update, options, function (err, data){
-      if(err) return res.status(400).json(err);
+  Fridge.findOneAndUpdate(
+    { userId: req.params.userId }, 
+    update, 
+    options
+  )
+  .then(data => {
       let unset = { "$unset": {}};
       let i = 0;
 
@@ -86,10 +100,9 @@ router.patch('/:userId/modifyFridge', (req, res) => {
           .catch(err => res.status(400).json(err))
       } else {
         return res.json(data);
-      }
-  });
-
-
+      }    
+  })
+  .catch(err => res.status(400).json(err));
 });
 
 
