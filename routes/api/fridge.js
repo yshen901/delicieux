@@ -30,7 +30,6 @@ router.patch('/:userId/addNewIngredient', (req, res) => {
   //     if(err) return res.status(400).json(err);
   //     return res.json(req.body);
   // });
-
   Fridge.findOneAndUpdate(
     { userId: req.params.userId }, 
     update, 
@@ -46,24 +45,26 @@ router.patch('/:userId/modifyIngredient', (req, res) => {
   let options = { "upsert": true, new: true };
   update["$inc"]["ingredients." + req.body.id + ".amount"] = req.body.amount;
   
-  Fridge.findOneAndUpdate({ userId: req.params.userId }, 
-    update, options, function (err, data){
-      if(err) return res.status(400).json(err);
-
-      // Remove ingredients from fridge if there is no more
-      if(data.ingredients[req.body.id].amount <= 0) {
-        let unset = { "$unset": {}};
-        unset["$unset"]["ingredients." + req.body.id] = req.body.id;
-        
-        Fridge.findOneAndUpdate({ userId: req.params.userId }, unset,
-          {new: true})
-          .then(data => res.json(data.ingredients[req.body.id]))
-          .catch(err => res.status(400).json(err))
-      } else {
-        // return res.json(data.ingredients[req.body.id]);
-        return res.json(Object.assign(req.body, data.ingredients[req.body.id]));
-      }
-  });
+  Fridge.findOneAndUpdate(
+    { userId: req.params.userId }, 
+    update, 
+    options
+  )
+  .then (data => {
+    // Remove ingredients from fridge if there is no more
+    if(data.ingredients[req.body.id].amount <= 0) {
+      let unset = { "$unset": {}};
+      unset["$unset"]["ingredients." + req.body.id] = req.body.id;
+      
+      Fridge.findOneAndUpdate({ userId: req.params.userId }, unset,
+        {new: true})
+        .then(data => res.json(data.ingredients[req.body.id]))
+        .catch(err => res.status(400).json(err))
+    } else {
+      // return res.json(data.ingredients[req.body.id]);
+      return res.json(Object.assign(req.body, data.ingredients[req.body.id]));
+    }
+  })
 });
 
 router.patch('/:userId/modifyFridge', (req, res) => {
@@ -90,7 +91,6 @@ router.patch('/:userId/modifyFridge', (req, res) => {
           i++;
         }
       });
-
       
       // Remove ingredients from fridge if there is no more
       if(i > 0) {
