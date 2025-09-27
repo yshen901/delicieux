@@ -2,8 +2,9 @@ import React from 'react';
 import Utensil from '../stylesheets/assets/cutlery.png';
 import Calc from '../stylesheets/assets/calc.png';
 import Clock from '../stylesheets/assets/clock-two.png';
-import { updateRecipeIngredients } from '../../util/recipe_api_util';
-import { getIngredientById } from '../../util/ingredient_api_util';
+//CHANGE2025: UNUSED
+// import { updateRecipeIngredients } from '../../util/recipe_api_util';
+// import { getIngredientById } from '../../util/ingredient_api_util';
 
 class CartItem extends React.Component {
   constructor(props) {
@@ -38,8 +39,12 @@ class CartItem extends React.Component {
   onDrop(e) {
     let recipeId = e.dataTransfer.getData("recipeId");
     if (recipeId) {
-      let { cart, date, time, getRecipeDB, addCartMeal, getCart, recipes } = this.props;
-      let recipe = this.recipe();
+
+      //CHANGE2025: UNUSED
+      // let { cart, date, time, getRecipeDB, addCartMeal, getCart, recipes } = this.props;
+      // let recipe = this.recipe();
+      let { cart, date, time, addCartMeal, recipes } = this.props;
+
       addCartMeal(cart.id, {
         date,
         time,
@@ -48,10 +53,11 @@ class CartItem extends React.Component {
       .then(() => {
         if (recipes[recipeId]) {
           let ingredients = recipes[recipeId].ingredients;
-          let count = 0;
+          // ERROR2025: The getIngredientById call is never run.
+          let count = 0; 
 
           for(let i = 0; i < ingredients.length; i++) {
-            count++;
+            count += 1;
             // getIngredientById(ingredients[i].id).then((res) => {
 
             // });
@@ -80,7 +86,9 @@ class CartItem extends React.Component {
   }
 
   render() {
-    const { time, sourceName, cart } = this.props;
+    // CHANGE2025: UNUSED
+    // const { time, sourceName, cart } = this.props;
+    const { time, cart } = this.props;
     
     let recipe = null;
     if (cart.dates) recipe = this.recipe();

@@ -4,12 +4,12 @@ import Leaf from '../stylesheets/assets/leaf.png';
 import Leaf2 from '../stylesheets/assets/leaf2.png';
 import Salami from '../stylesheets/assets/salami.png';
 import Clock from '../stylesheets/assets/time.png';
-import Calorie from '../stylesheets/assets/caloriee.png'
+// import Calorie from '../stylesheets/assets/caloriee.png' // CHANGE2025: UNUSED
 import Like from "../stylesheets/assets/like.png";
 import Dislike from '../stylesheets/assets/dislike.png'
 
-const MAX = 21;
-const MIN = 0;
+// const MAX = 21; // CHANGE2025: UNUSED
+// const MIN = 0; // CHANGE2025: UNUSED
 
 class RecipeIndexItem extends React.Component {
   constructor(props) {
@@ -31,8 +31,11 @@ class RecipeIndexItem extends React.Component {
 
   // TODO: WHEN REMOVING ITEM, ALSO REMOVE IT COMPLETELY FROM THE CART
   render() {
-    const { recipe, rotateToBack, fridge } = this.props;
-    const { vegetarian, vegan, title, spoonacularScore, image, servings, readyInMinutes, nutrition } = this.props.recipe
+    // CHANGE2025: UNUSED
+    // const { recipe, rotateToBack, fridge } = this.props;
+    // const { vegetarian, vegan, title, spoonacularScore, image, servings, readyInMinutes, nutrition } = this.props.recipe
+    const { recipe } = this.props;
+    const { vegetarian, vegan, title, spoonacularScore, image, readyInMinutes, nutrition } = this.props.recipe
 
     let timeC = readyInMinutes < 60 ? (readyInMinutes).toString() + "m":
       readyInMinutes < 180 ? Math.floor(readyInMinutes / 60).toString() + "h" : "3h+";

@@ -1,11 +1,14 @@
 import React from "react";
 import "../stylesheets/recipe_index/recipe_index_item.scss";
-import Leaf from "../stylesheets/assets/leaf.png";
-import Leaf2 from "../stylesheets/assets/leaf2.png";
-import Salami from "../stylesheets/assets/salami.png";
 
-const MAX = 21;
-const MIN = 0;
+// CHANGED2025: UNUSED
+// import Leaf from "../stylesheets/assets/leaf.png";
+// import Leaf2 from "../stylesheets/assets/leaf2.png";
+// import Salami from "../stylesheets/assets/salami.png";
+
+// CHANGED2025: UNUSED
+// const MAX = 21;
+// const MIN = 0;
 
 class MainIndexItem extends React.Component {
   constructor(props) {
@@ -42,41 +45,53 @@ class MainIndexItem extends React.Component {
 
   // TODO: WHEN REMOVING ITEM, ALSO REMOVE IT COMPLETELY FROM THE CART
   render() {
-    const { recipe, rotateToBack, fridge } = this.props;
+    // CHANGED2025: UNUSED
+    // const { recipe, rotateToBack, fridge } = this.props;
+    const { recipe } = this.props;
+
+    // CHANGED2025: UNUSED
+    // const {
+    //   vegetarian,
+    //   vegan,
+    //   title,
+    //   spoonacularScore,
+    //   image,
+    //   servings,
+    //   readyInMinutes,
+    //   nutrition
+    // } = this.props.recipe;
     const {
-      vegetarian,
-      vegan,
       title,
-      spoonacularScore,
       image,
-      servings,
-      readyInMinutes,
-      nutrition
     } = this.props.recipe;
 
-    let timeC =
-      readyInMinutes < 60
-        ? readyInMinutes.toString()
-        : readyInMinutes < 180
-        ? Math.floor(readyInMinutes / 60).toString() + "h"
-        : "3h";
-    let isVegan;
-    if (vegan) {
-      isVegan = "Vegan";
-    } else if (vegetarian) {
-      isVegan = "Vegetarian";
-    } else {
-      isVegan = "Non Vegan";
-    }
-    let calorieC = Math.floor(nutrition[0].amount);
-    let leaf;
-    if (isVegan === "Vegan") {
-      leaf = <img className="leaf" src={Leaf2} alt="" />;
-    } else if (isVegan === "Vegetarian") {
-      leaf = <img className="leaf" src={Leaf} alt="" />;
-    } else {
-      leaf = <img className="leaf" src={Salami} alt="" />;
-    }
+    // CHANGED2025: UNUSED
+    // let timeC =
+    //   readyInMinutes < 60
+    //     ? readyInMinutes.toString()
+    //     : readyInMinutes < 180
+    //     ? Math.floor(readyInMinutes / 60).toString() + "h"
+    //     : "3h";
+        
+    // let isVegan;
+    // if (vegan) {
+    //   isVegan = "Vegan";
+    // } else if (vegetarian) {
+    //   isVegan = "Vegetarian";
+    // } else {
+    //   isVegan = "Non Vegan";
+    // }
+
+    // CHANGED2025: UNUSED
+    // let calorieC = Math.floor(nutrition[0].amount); 
+    // let leaf;
+    // if (isVegan === "Vegan") {
+    //   leaf = <img className="leaf" src={Leaf2} alt="" />;
+    // } else if (isVegan === "Vegetarian") {
+    //   leaf = <img className="leaf" src={Leaf} alt="" />;
+    // } else {
+    //   leaf = <img className="leaf" src={Salami} alt="" />;
+    // }
 
     return (
       <div

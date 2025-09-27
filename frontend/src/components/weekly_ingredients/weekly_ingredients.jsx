@@ -46,7 +46,9 @@ class WeeklyIngredients extends React.Component {
   
   getRecipes() {
     let dates = this.generateDates();
-    let { cart, recipes, addCartDate, getRecipeDB } = this.props;
+    // CHANGED2025: UNUSED
+    // let { cart, recipes, addCartDate, getRecipeDB } = this.props; 
+    let { cart, recipes, getRecipeDB } = this.props; 
     let recipeId;
 
     for (let i = 0; i < dates.length; i++) {
@@ -95,7 +97,7 @@ class WeeklyIngredients extends React.Component {
   }
 
   modifyIngredients(recipe) {
-    let cat = {};
+    // let cat = {}; //CHANGE2025: UNUSED
     for(let i = 0; i < recipe.ingredients.length; i++) {
       // if(this.ingredients[recipe.ingredients[i].id]) {
       //   this.ingredients[recipe.ingredients[i].id].amount += recipe.ingredients[i].amount;

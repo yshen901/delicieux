@@ -75,16 +75,19 @@ class WeeklyCartDay extends React.Component {
   }
 
   render() {
-    const { recipes, cart, date, openModal, addMacros } = this.props;
-    const mapper = {
-      Mon: "Monday",
-      Tue: "Tuesday",
-      Wed: "Wednesday",
-      Thu: "Thursday",
-      Fri: "Friday",
-      Sat: "Saturday",
-      Sun: "Sunday"
-    }
+    //CHANGED2025: UNUSED
+    // const { recipes, cart, date, openModal, addMacros } = this.props;
+    // const mapper = {
+    //   Mon: "Monday",
+    //   Tue: "Tuesday",
+    //   Wed: "Wednesday",
+    //   Thu: "Thursday",
+    //   Fri: "Friday",
+    //   Sat: "Saturday",
+    //   Sun: "Sunday"
+    // }
+    const { recipes, cart, date } = this.props;
+
     let cartContent = 
       TIMES.map((time, idx) => {
         // Must pull recipes into an instance variable otherwise it won't be available
