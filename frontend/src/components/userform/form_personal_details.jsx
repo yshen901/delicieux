@@ -5,6 +5,7 @@ import React from "react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // import { withRouter } from "react-router-dom";
+import { withNavigation } from "../withNavigation";
 
 class FormPersonalDetails extends React.Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class FormPersonalDetails extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push("/index");
+      this.props.navigate("/index");
     }
     this.setState({ errors: nextProps.errors });
   }
@@ -85,7 +86,7 @@ class FormPersonalDetails extends React.Component {
       <ThemeProvider theme={this.theme}>
         <div className="session-background">
           <div className="signup-text"
-            onClick={() => this.props.history.push("/")}>délicieux</div>
+            onClick={() => this.props.navigate("/")}>délicieux</div>
           <a className="signup-form" class="btn">
             <span>
               <span>
@@ -132,4 +133,4 @@ class FormPersonalDetails extends React.Component {
   }
 }
 
-export default FormPersonalDetails;
+export default withNavigation(FormPersonalDetails);

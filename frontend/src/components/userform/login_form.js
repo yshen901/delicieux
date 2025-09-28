@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+import { withNavigation } from "../withNavigation";
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push("/index");
+      this.props.navigate("/index");
     }
 
     this.setState({ errors: nextProps.errors });
@@ -105,7 +107,7 @@ class LoginForm extends React.Component {
     return (
       <div className="session-background">
         <div className="signup-text"
-          onClick={() => this.props.history.push("/")}>délicieux</div>
+          onClick={() => this.props.navigate("/")}>délicieux</div>
         <a className="signup-form" class="btn">
           <span>
             <span>
@@ -166,7 +168,7 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withNavigation(LoginForm);
 
 
 // React.Fragment --- Fake DOM element
@@ -198,7 +200,7 @@ export default LoginForm;
 
 //   componentWillReceiveProps(nextProps) {
 //     if (nextProps.currentUser === true) {
-//       this.props.history.push("/");
+//       this.props.navigate("/");
 //     }
 
 //     this.setState({ errors: nextProps.errors });

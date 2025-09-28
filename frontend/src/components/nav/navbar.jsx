@@ -15,7 +15,7 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
       e.preventDefault();
-      this.props.navigate("/"); // originally this.props.history.push
+      this.props.navigate("/");
       this.props.logout();
   }
 
@@ -74,4 +74,5 @@ class NavBar extends React.Component {
   }
 }
 
+// TODO: Maybe wrap all of this in a custom withRouter that has both
 export default withNavigation(withLocation(NavBar));
