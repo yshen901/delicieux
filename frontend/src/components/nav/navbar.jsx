@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SideIcon from '../stylesheets/assets/side.png';
 
 import withLocation from '../withLocation';
+import { withNavigation } from '../withNavigation';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
       e.preventDefault();
-      this.props.history.push("/");
+      this.props.navigate("/"); // originally this.props.history.push
       this.props.logout();
   }
 
@@ -73,4 +74,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default withLocation(NavBar);
+export default withNavigation(withLocation(NavBar));
