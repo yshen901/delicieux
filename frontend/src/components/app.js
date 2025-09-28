@@ -58,8 +58,8 @@ const App = () => (
 
       {/* Protected pages after signing in */}
       <Route path="/index" element={ <ProtectedRoute element={<MainIndexContainer />} /> }/>
-      <Route path="/fridge" element={ <ProtectedRoute element={<FridgeContainer />} /> }/>
-      <Route path="/weeklyCart" element={ <ProtectedRoute element={<WeeklyCartContainer />} /> }/>
+      {/* <Route path="/fridge" element={ <ProtectedRoute element={<FridgeContainer />} /> }/> */}
+      {/* <Route path="/weeklyCart" element={ <ProtectedRoute element={<WeeklyCartContainer />} /> }/> */}
 
       <Route path="/filter" element={<Filter />} />
       <Route path="*" element={<Navigate to="/" replace />} />  
