@@ -39,7 +39,7 @@ class WeeklyCartDay extends React.Component {
         </div>
       )
     else {
-      if (!cart.dates[date].STATUS) debugger;
+      // if (!cart.dates[date].STATUS) debugger;
       return (
         <div className="weekly-cart-item-eat" onClick={(e) => { this.makeItem(e, this.recipe[time], date, time) }}>
           Make Meal
