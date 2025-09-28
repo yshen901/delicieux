@@ -86,13 +86,13 @@ export const getMultipleRecipes = (ids, includeNutrition = true) => {
 export const getRecipesByIngredients = (ingredients, limit = 12, ranking = 1, ignorePantry = true) => {
   const query = ingredients.join(',');
   return axios.get(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${query}&ranking=${ranking}&ignorePantry=${ignorePantry}&number=${limit}&apiKey=${key.apiKey_spoon}`);
-    // .then((response) => {
-    //   debugger
-    //   console.log(response)
-    // })
-    // .catch((error) => {
-    //   console.log(error)
-    // })
+  //   // .then((response) => {
+  //   //   debugger
+  //   //   console.log(response)
+  //   // })
+  //   // .catch((error) => {
+  //   //   console.log(error)
+  //   // })
 
   // return axios({
   //   "method": "GET",
@@ -108,7 +108,7 @@ export const getRecipesByIngredients = (ingredients, limit = 12, ranking = 1, ig
   //     "ignorePantry": `${ignorePantry}`,
   //     "ingredients": `${query}`
   //   }
-  //})
+  // })
 
 };
 
