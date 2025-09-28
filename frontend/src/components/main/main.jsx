@@ -13,6 +13,8 @@ import KitchenCounter from '../stylesheets/assets/four-two.jpeg';
 import MainIndexItemContainer from './main_index_item_container';
 import MainDevelopers from './main_developers';
 
+import { withNavigation } from '../withNavigation';
+
 import { 
   recipe1,
   recipe2, 
@@ -134,7 +136,7 @@ class MainPage extends React.Component {
                                 <div className="splash-loading-container">
                                     {/* <img className="apron" src={Apron} alt="" />; */}
                                     <h2 className="splash-main-title"
-                                        onClick={()=>this.props.history.push('/login')}>
+                                        onClick={()=>this.props.navigate('/login')}>
                                         délicieux
                                     </h2>
                                     {!this.props.loggedIn && 
@@ -167,7 +169,7 @@ class MainPage extends React.Component {
                                     </div>
                                     <div className="splash-loading-container">
                                     <h2 className="splash-main-title"
-                                        onClick={()=>this.props.history.push('/login')}>
+                                        onClick={()=>this.props.navigate('/login')}>
                                         délicieux
                                     </h2>
 
@@ -206,7 +208,7 @@ class MainPage extends React.Component {
                                 <div className="splash-middle-container-3">
                                     <div className="splash-loading-container">
                                     <h2 className="splash-main-title"
-                                        onClick={()=>this.props.history.push('/login')}>
+                                        onClick={()=>this.props.navigate('/login')}>
                                         délicieux
                                     </h2>
 
@@ -271,7 +273,7 @@ class MainPage extends React.Component {
 
                                     <div className="splash-loading-container">
                                     <h2 className="splash-main-title"
-                                        onClick={()=>this.props.history.push('/login')}>
+                                        onClick={()=>this.props.navigate('/login')}>
                                         délicieux
                                     </h2>
 
@@ -313,4 +315,4 @@ class MainPage extends React.Component {
     }
 }
     
-export default MainPage;
+export default withNavigation(MainPage);

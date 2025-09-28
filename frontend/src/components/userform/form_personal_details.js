@@ -1,6 +1,10 @@
 import React from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { withRouter } from "react-router-dom";
+
+// MUI_UPDATE: Changed method of importing
+// import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+// import { withRouter } from "react-router-dom";
 
 class FormPersonalDetails extends React.Component {
   constructor(props) {
@@ -11,6 +15,9 @@ class FormPersonalDetails extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
     this.hitEnter = this.hitEnter.bind(this);
+
+    // Create theme. TODO: This will need to change when we switch to functional components
+    this.theme = createTheme()
   }
 
   componentDidMount() {
@@ -75,7 +82,7 @@ class FormPersonalDetails extends React.Component {
     const { values, handleChange } = this.props;
 
     return (
-      <MuiThemeProvider>
+      <ThemeProvider theme={this.theme}>
         <div className="session-background">
           <div className="signup-text"
             onClick={() => this.props.history.push("/")}>délicieux</div>
@@ -120,9 +127,9 @@ class FormPersonalDetails extends React.Component {
             </span>
           </a>
         </div>
-      </MuiThemeProvider>
+      </ThemeProvider>
     );
   }
 }
 
-export default withRouter(FormPersonalDetails);
+export default FormPersonalDetails;

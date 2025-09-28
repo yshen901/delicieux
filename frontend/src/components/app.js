@@ -1,6 +1,10 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch, Route, Redirect } from 'react-router-dom';
+
+// REACT_UPDATE: Switch and Redirect no longer available
+// import { Switch, Route, Redirect } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 
 import RecipeShowContainer from './recipes_yj/recipe_show';
 import Modal from './modal/modal';
@@ -15,23 +19,41 @@ import WeeklyCartContainer from './cart_weekly/weekly_cart_container';
 import Filter from './recipes_yj/main_filter_container';
 import './stylesheets/App.scss';
 
+// const App = () => (
+//   <div>
+//     <Side />
+//     <Modal />
+//     <Switch>
+//       <Route exact path="/recipeshow" component={RecipeShowContainer} />
+//       <Route exact path="/" component={ MainPage } />
+//       <AuthRoute exact path="/signup" component={ UserForm } />
+//       <AuthRoute exact path="/login" component={ LoginFormContainer } />
+//       <ProtectedRoute exact path="/fridge" component={FridgeContainer} />
+//       <ProtectedRoute exact path="/index" component={ MainIndexContainer } />
+//       <ProtectedRoute exact path="/weeklyCart" component={ WeeklyCartContainer }/>
+
+
+//       <Route exact path="/filter" component={Filter} />
+//       <Redirect to="/" />
+//     </Switch>
+//   </div>
+// );
+
+// REACT_UPDATE:
+//    1. "exact" is removed - all routes are exact by default now
+//    2. Switch and Redirect both changed to reflect new format
+//    3. All routes switched to Route, with 
 const App = () => (
   <div>
     <Side />
     <Modal />
-    <Switch>
-      <Route exact path="/recipeshow" component={RecipeShowContainer} />
-      <Route exact path="/" component={ MainPage } />
-      <AuthRoute exact path="/signup" component={ UserForm } />
-      <AuthRoute exact path="/login" component={ LoginFormContainer } />
-      <ProtectedRoute exact path="/fridge" component={FridgeContainer} />
-      <ProtectedRoute exact path="/index" component={ MainIndexContainer } />
-      <ProtectedRoute exact path="/weeklyCart" component={ WeeklyCartContainer }/>
+    <Routes>
+      <Route path="/recipeshow" element={ <RecipeShowContainer />} />
+      <Route path="/" element={ <MainPage /> } />
 
-
-      <Route exact path="/filter" component={Filter} />
-      <Redirect to="/" />
-    </Switch>
+      <Route path="/filter" element={<Filter />} />
+      <Route path="*" element={<Navigate to="/" replace />} />  
+    </Routes>
   </div>
 );
 

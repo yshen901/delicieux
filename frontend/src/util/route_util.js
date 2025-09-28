@@ -1,7 +1,10 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+
+// REACT_UPDATE: Switch and Redirect no longer available
+// import { Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
 
 // Passed in from parent component or from mapStateToProps
 const Auth = ({ component: Component, path, loggedIn, exact }) => (
@@ -10,7 +13,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
       <Component {...props} />
     ) : (
       // change this later
-      <Redirect to="/index" />
+      <Navigate to="/index" replace/>
     )
   )} />
 );
@@ -23,7 +26,7 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
         <Component {...props} />
       ) : (
         // Redirect to the login page if the user is already authenticated
-        <Redirect to="/login" />
+        <Navigate to="/login" replace/>
       )
     }
   />
@@ -35,6 +38,7 @@ const mapStateToProps = state => (
   {loggedIn: state.session.isAuthenticated}
 );
 
-export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+// REACT_UPDATE: 
+export const AuthRoute = connect(mapStateToProps)(Auth);
 
-export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+export const ProtectedRoute = connect(mapStateToProps)(Protected);

@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 
   const container = document.getElementById("root");
-  const root = createRoot(container)
+  const root = ReactDOM.createRoot(container)
   root.render(<Root store={store} />)
 });
 
