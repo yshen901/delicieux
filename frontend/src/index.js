@@ -6,6 +6,8 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+import { createRoot } from "react-dom/client";
+
 import { 
   getRandomRecipe, 
   // getRandomRecipes, 
@@ -117,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 
   const container = document.getElementById("root");
-  const root = ReactDOM.createRoot(container)
+  const root = createRoot(container)
   root.render(<Root store={store} />)
 });
 

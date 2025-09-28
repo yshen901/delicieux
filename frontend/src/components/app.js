@@ -42,14 +42,24 @@ import './stylesheets/App.scss';
 // REACT_UPDATE:
 //    1. "exact" is removed - all routes are exact by default now
 //    2. Switch and Redirect both changed to reflect new format
-//    3. All routes switched to Route, with 
+//    3. All routes switched to Route, and original AuthRoute and ProtectedRoute are just element wrappers
 const App = () => (
   <div>
     <Side />
     <Modal />
     <Routes>
+      {/* Main and Public pages */}
       <Route path="/recipeshow" element={ <RecipeShowContainer />} />
       <Route path="/" element={ <MainPage /> } />
+
+      {/* Authentication Pages */}
+      <Route path="/signup" element={ <AuthRoute element={<UserForm />} /> }/>
+      <Route path="/login" element={ <AuthRoute element={<LoginFormContainer />} /> }/>
+
+      {/* Protected pages after signing in */}
+      <Route path="/index" element={ <ProtectedRoute element={<MainIndexContainer />} /> }/>
+      <Route path="/fridge" element={ <ProtectedRoute element={<FridgeContainer />} /> }/>
+      <Route path="/weeklyCart" element={ <ProtectedRoute element={<WeeklyCartContainer />} /> }/>
 
       <Route path="/filter" element={<Filter />} />
       <Route path="*" element={<Navigate to="/" replace />} />  
