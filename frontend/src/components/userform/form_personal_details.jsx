@@ -2,7 +2,7 @@ import React from "react";
 
 // MUI_UPDATE: Changed method of importing
 // import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+// import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 // import { withRouter } from "react-router-dom";
 import { withNavigation } from "../withNavigation";
@@ -17,8 +17,8 @@ class FormPersonalDetails extends React.Component {
     this.handleSignup = this.handleSignup.bind(this);
     this.hitEnter = this.hitEnter.bind(this);
 
-    // Create theme. TODO: This will need to change when we switch to functional components
-    this.theme = createTheme()
+    // Create theme. TODO: Is this ever even used?
+    // this.theme = createTheme()
   }
 
   componentDidMount() {
@@ -83,7 +83,7 @@ class FormPersonalDetails extends React.Component {
     const { values, handleChange } = this.props;
 
     return (
-      <ThemeProvider theme={this.theme}>
+      // <ThemeProvider theme={this.theme}>
         <div className="session-background">
           <div className="signup-text"
             onClick={() => this.props.navigate("/")}>délicieux</div>
@@ -128,7 +128,7 @@ class FormPersonalDetails extends React.Component {
             </span>
           </a>
         </div>
-      </ThemeProvider>
+      // </ThemeProvider>
     );
   }
 }

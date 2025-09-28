@@ -60,6 +60,8 @@ class SignupForm extends React.Component {
       bool = false;
     }
 
+    debugger
+
     this.setState({ errors: errors }, () => console.log(this.state.errors))
     
     if (bool) {
