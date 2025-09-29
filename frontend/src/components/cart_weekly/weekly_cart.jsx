@@ -220,6 +220,7 @@ class WeeklyCart extends React.Component {
                 return <WeeklyCartDayContainer date={date} key={idx} removeMacros={this.removeMacros}/>;
               })}
             </div>
+            {/* TODO: Add this back in and make it working */}
             {/* <div className="weekly-cart-details">
               <WeeklyNutrition 
                 nutrients = { this.state } />

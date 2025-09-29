@@ -161,6 +161,9 @@ export const getRandomRecipes = number => dispatch =>
              errors => dispatch(receiveRecipeErrors(errors))
            );
 
+
+// This is what is likely called by most demoUsers
+//    TODO: Cache identical searches from before to mongoDB to save another API call
 export const getRecipesByIngredients = (ingredients, limit, ranking, ignorePantry) => dispatch => (
   RecipeAPI
     .getRecipesByIngredients(ingredients, limit, ranking, ignorePantry)
