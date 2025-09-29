@@ -208,6 +208,7 @@ class WeeklyIngredients extends React.Component {
           Weekly Shopping List
         </div>
         <ul className="catagory-list">
+          {/* TODO: Add this to the top nav bar too. Maybe make a whole page for it so it is more visible. */}
           { catagories }
         </ul>
       </div>
