@@ -77,8 +77,11 @@ const getMultipleRecipes = (recipeIds) => dispatch => (
           RecipeAPI
             .getRecipe(apiData[i].id)
             .then(({data}) => {
+              // TRIES TO PULL DATA FROM MONGODB
               results--;
               apiData[i] = data;
+
+              console.log(data)
               // from db
               // if (results === 0) dispatch(receiveRecipes(apiData))
               //   .then( ()=> dispatch(stopLoad()));    
@@ -89,6 +92,7 @@ const getMultipleRecipes = (recipeIds) => dispatch => (
 
             })
             .catch(() => {
+              // IF IT IS A NEW RECIPE, THEN PULL THE INFORMATION FROM SPOONACULAR
               let newRecipes = {};
               updateDone++;
               RecipeAPI.postRecipeId(apiData[i])
@@ -145,7 +149,8 @@ export const getRandomRecipe = () => dispatch => (
 );
 
 // Nested structure handles the issue of returned recipes not having
-// defailed nutrition information.
+// defailed nutrition information. 
+// NOTE: This returns the recipeIds. We can store the Id information in our database!
 export const getRandomRecipes = number => dispatch =>
          RecipeAPI.getRandomRecipes(number)
            .then(
@@ -161,7 +166,6 @@ export const getRecipesByIngredients = (ingredients, limit, ranking, ignorePantr
     .getRecipesByIngredients(ingredients, limit, ranking, ignorePantry)
     .then(
       (results) => {
-        debugger
         let {data} = results
         let recipeIds = data.map(recipe => recipe.id);
         dispatch(getMultipleRecipes(recipeIds));
