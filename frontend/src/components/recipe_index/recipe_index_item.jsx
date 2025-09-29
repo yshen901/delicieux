@@ -58,10 +58,13 @@ class RecipeIndexItem extends React.Component {
     }
 
     let score
+    let scoreNumber
     if (spoonacularScore > 50) {
       score = <img className="like" src={Like} alt="" />;
+      scoreNumber = <div className="recipe-index-item-name">{spoonacularScore.toFixed(1)}</div>
     } else {
       score = <img className="like" src={Dislike} alt="" />;
+      scoreNumber = <div className="recipe-index-item-name"></div>
     }
 
     return (
@@ -87,7 +90,7 @@ class RecipeIndexItem extends React.Component {
         <div className="icon-box">
           <div className="vegan">
             {score}
-            <div className="recipe-index-item-name">{spoonacularScore}</div>
+            {scoreNumber}
           </div>
           <div className="vegan-two">
             {leaf}

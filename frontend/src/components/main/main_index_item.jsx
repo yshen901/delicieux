@@ -45,6 +45,7 @@ class MainIndexItem extends React.Component {
 
   // TODO: WHEN REMOVING ITEM, ALSO REMOVE IT COMPLETELY FROM THE CART
   render() {
+
     // CHANGED2025: UNUSED
     // const { recipe, rotateToBack, fridge } = this.props;
     const { recipe } = this.props;
