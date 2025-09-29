@@ -220,7 +220,7 @@ class WeeklyCart extends React.Component {
                 return <WeeklyCartDayContainer date={date} key={idx} removeMacros={this.removeMacros}/>;
               })}
             </div>
-            <div className="weekly-cart-details">
+            {/* <div className="weekly-cart-details">
               <WeeklyNutrition 
                 nutrients = { this.state } />
               <div className="weekly-cart-data">
@@ -233,7 +233,7 @@ class WeeklyCart extends React.Component {
                   user = { this.props.currentUser } />
                 <div className="weekly-cart-graph"></div>
               </div>
-            </div>
+            </div> */}
           </div>
 
         </div>
