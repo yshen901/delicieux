@@ -43,7 +43,7 @@ const Auth = ({ element, loggedIn }) => {
 //    1. Change the entire thing to an element wrapper instead of a Route. 
 //          Otherwise trying to use AuthRoute will cause a problem since React expects only <Route/> elements inside of <Router/> 
 const Protected = ({ element, loggedIn }) => {
-  return loggedIn ? element : <Navigate to="/index" replace/>
+  return loggedIn ? element : <Navigate to="/login" replace/>
 };
 
 
