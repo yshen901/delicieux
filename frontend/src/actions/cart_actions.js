@@ -72,23 +72,32 @@ export const addCartDate = (cartId, dateInfo) => dispatch => (
     )
 );
 
-export const addCartMeal = (cartId, mealInfo) => dispatch => (
-  CartAPI
-    .setCartMeal(cartId, mealInfo)
-    .then(
-      () => dispatch(addRecipe(mealInfo)),
-      errors => dispatch(receiveCartErrors(errors)),
-    )
-)
+export const addCartMeal = (cartId, mealInfo) => dispatch => {
+  debugger
+  return (
+    CartAPI
+      .setCartMeal(cartId, mealInfo)
+      .then(
+        () => dispatch(addRecipe(mealInfo)),
+        errors => dispatch(receiveCartErrors(errors)),
+      )
+  )
+}
 
-export const removeCartMeal = (cartId, mealInfo) => dispatch => (
-  CartAPI
-    .setCartMeal(cartId, mealInfo)
-    .then(
-      () => dispatch(removeRecipe(mealInfo)),
-      errors => dispatch(receiveCartErrors(errors)),
+// BUG: This is not actually removing the cart meal since it just doesn't pass in recipeId into mealInfo.
+//      This should result in mealInfo being set to null, removing the recipe, but in practice this does not happen. 
+// FIX: We changed this by calling removeCartMeal instead.
+export const removeCartMeal = (cartId, mealInfo) => dispatch => {
+  debugger
+  return (
+    CartAPI
+      .removeCartMeal(cartId, mealInfo)
+      .then(
+        () => dispatch(removeRecipe(mealInfo)),
+        errors => dispatch(receiveCartErrors(errors)),
+      )
     )
-)
+  }
 
 
 

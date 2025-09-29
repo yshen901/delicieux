@@ -48,6 +48,32 @@ router.patch("/:cartId/addMeal/", (req, res) => {
   let update = { $set: {} };
   update["$set"][`dates.${req.body.date}.${req.body.time}`] = req.body.recipeId;
 
+  console.log(req.body)
+
+  // MONGOOSE_UPDATE: No longer accepts a callback
+  // Cart.findOneAndUpdate(
+  //   { _id: req.params.cartId },
+  //   update,
+  //   options,
+  //   (err, result) => (err ? res.status(400).json(err) : res.json(result))
+  // )
+  Cart.findOneAndUpdate(
+    { _id: req.params.cartId },
+    update,
+    options
+  )
+  .then(result => res.json(result))
+  .catch(err => res.status(400).json(err))
+
+});
+ 
+// Add removeMeal route to unset the date:time field, which would remove the meal from that day
+//    The original process uses addMeal and passes in "undefined" as the recipeId to try and set it to null - this does not work.
+router.patch("/:cartId/removeMeal/", (req, res) => {
+  let options = { new: true };
+  let update = { $unset: {} };
+  update["$unset"][`dates.${req.body.date}.${req.body.time}`] = "";
+
   // MONGOOSE_UPDATE: No longer accepts a callback
   // Cart.findOneAndUpdate(
   //   { _id: req.params.cartId },
